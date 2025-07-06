@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: edw-sample-app
+  namespace: argocd
+spec:
+  project: edw-apps
+  source:
+    repoURL: https://github.com/bkiseu/gitops.git
+    targetRevision: main
+    path: apps/edw/base
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: edw
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
