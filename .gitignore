@@ -1,0 +1,32 @@
+
+---
+
+## ✅ `.gitignore`
+
+```gitignore
+# OS & Editor junk
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Terraform (if used)
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Helm
+*.tgz
+charts/
+tmpcharts/
+release.yaml
+
+# Kubernetes
+*.kubeconfig
+
+# Logs
+*.log
+
+# Secrets (DO NOT COMMIT PLAINTEXT SECRETS)
+*.enc.yaml
+secrets.yaml

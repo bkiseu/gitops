@@ -1,0 +1,15 @@
+server:
+  ingress:
+    enabled: false  # We're managing ingress manually
+
+controller:
+  metrics:
+    enabled: true
+
+repoServer:
+  metrics:
+    enabled: true
+
+applicationSet:
+  metrics:
+    enabled: true

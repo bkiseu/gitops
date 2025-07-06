@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: platform
+  namespace: argocd
+spec:
+  description: Platform/infrastructure-level apps (ingress, cert-manager, etc.)
+  sourceRepos:
+    - '*'  # Allow any repo — restrict later if needed
+  destinations:
+    - namespace: '*'
+      server: '*'  # Allow all clusters/namespaces — restrict later if needed
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  orphanedResources:
+    warn: true
